@@ -8,5 +8,8 @@ block content
     a(href=`${poeta.website}`) Clicca quì per dirigerti al sito internet
     h3 email: #{poeta.email}
     img(src=`${poeta.image}`)
-    each poesia in poeta.poesie
-        p #{poesia}
+    h2 Poesie
+    ul
+      each poesia in poeta.poesie
+          li #{poesia}
+          <br>
