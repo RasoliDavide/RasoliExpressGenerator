@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  div
+    h1 #{poeta.firstName} #{poeta.lastName}
+    h3 #{poeta.age} anni
+    img(src=`${poeta.image}`)
+    each poesia in poeta.poesie
+        p #{poesia}

@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  each poeta, index in poeti
+    div
+      a(href=`/details?id=${index}`) #{poeta.firstName} #{poeta.lastName}
+      h3 #{poeta.age}
+      img(src=`${poeta.image}`)
