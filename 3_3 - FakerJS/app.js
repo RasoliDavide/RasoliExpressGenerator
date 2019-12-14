@@ -34,11 +34,15 @@ else
   for(let i = 0; i < 10; i++)
   {
     obj = {
+      id : i,
       firstName : faker.name.firstName(1),
       lastName : faker.name.lastName(),
       age : faker.random.number(90),
       image: faker.image.people(),
-      'poesie' : [
+      email : faker.internet.email(),
+      website : faker.internet.url(),
+      nationality : faker.address.country(),
+      poesie : [
         faker.lorem.paragraph(),
         faker.lorem.paragraph(),
         faker.lorem.paragraph()
@@ -57,9 +61,11 @@ console.log(poeti);
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var serviceRouter = require('./routes/services')
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/services', serviceRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

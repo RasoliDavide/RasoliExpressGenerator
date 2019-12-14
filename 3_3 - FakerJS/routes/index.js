@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 router.get('/details', function(req, res, next)
 {
-  const poeta = poeti[req.query.id]
+  const poeta = poeti.find(p => p.id == req.query.id)
   console.log(poeta)
   res.render('details', {poeta: poeta})
 })

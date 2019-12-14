@@ -3,7 +3,10 @@ extends layout
 block content
   div
     h1 #{poeta.firstName} #{poeta.lastName}
+    h3 Paese di nascita: #{poeta.nationality}
     h3 #{poeta.age} anni
+    a(href=`${poeta.website}`) Clicca quì per dirigerti al sito internet
+    h3 email: #{poeta.email}
     img(src=`${poeta.image}`)
     each poesia in poeta.poesie
         p #{poesia}
